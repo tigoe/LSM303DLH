@@ -98,8 +98,6 @@ void LSM303DLH::read()
 	Wire.endTransmission();
 	Wire.requestFrom(ACC_ADDRESS,6);
 
-	while (Wire.available() < 6);
-	
 	uint8_t xla = Wire.read();
 	uint8_t xha = Wire.read();
 	uint8_t yla = Wire.read();
@@ -116,8 +114,6 @@ void LSM303DLH::read()
 	Wire.write(OUT_X_H_M);
 	Wire.endTransmission();
 	Wire.requestFrom(MAG_ADDRESS,6);
-
-	while (Wire.available() < 6);
 
 	uint8_t xhm = Wire.read();
 	uint8_t xlm = Wire.read();
